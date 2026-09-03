@@ -1,0 +1,28 @@
+{
+    "name": "vampqwe/vampqwe-engine",
+    "description": "Легковесный и безопасный PHP-движок",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vampqwe"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "ramsey/uuid": "^4.9"
+    },
+    "autoload": {
+        "classmap": [
+            "core/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vampqwe\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
