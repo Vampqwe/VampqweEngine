@@ -4,44 +4,37 @@
 .env.local
 *.env.*
 
-# Dependencies
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Dependencies and build artifacts
 node_modules/
 venv/
 .venv/
 __pycache__/
-.mypy_cache/
-.pytest_cache/
+*.pyc
+*.pyo
+*.pyd
 dist/
 build/
 target/
 .gradle/
+.mypy_cache/
+.pytest_cache/
 
-# Compiled files
-*.pyc
-*.class
-*.o
-*.exe
-*.dll
-*.so
-*.a
-*.obj
-*.out
-
-# Editor/IDE files
+# Editors and IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
-*.tmp
 
 # System files
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
-
-# Coverage
+# Coverage reports
 coverage/
 htmlcov/
 .coverage
