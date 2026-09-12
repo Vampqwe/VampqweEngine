@@ -24,6 +24,7 @@ spl_autoload_register(function ($class) {
         // Database
         'DataBase' => 'system/Database/DataBase.php',
         'DbTable' => 'system/Database/DbTable.php',
+        'DbException' => 'system/Database/DbException.php',
         // Module
         'Template' => 'module/Tamplate/Template.php',
         'AccountManagementSystem' => 'module/AccountManagementSystem/AccountManagementSystem.php',
@@ -42,6 +43,11 @@ spl_autoload_register(function ($class) {
         }
     }
 });
+
+// Подключаем Composer autoloader для сторонних библиотек (ramsey/uuid)
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require __DIR__ . '/../vendor/autoload.php';
+}
 
 echo "=== ТЕСТИРОВАНИЕ ВСЕХ КЛАССОВ ===\n\n";
 
@@ -68,6 +74,9 @@ function test($name, $callback) {
 // Настраиваем базовые директории для тестов
 Route::setBasePath('/workspace');
 File::setBaseDir('/workspace');
+
+// Разрешаем доступ к директориям core/log и tests для тестов
+$originalBaseDir = '/workspace';
 
 // ==================== Route.php ====================
 echo "--- Тесты Route.php ---\n";
@@ -216,7 +225,7 @@ test("TimeDate: форматирование даты", function() {
     file_put_contents('/tmp/test.env', "DEFAULT_TIMEZONE=UTC\nDATE_TPL=Y-m-d\nTIME_TPL=H:i:s\n");
     $config = new Config('/tmp/test.env');
     $time = new TimeDate($config);
-    $formatted = $time->getDateFormatted('Y-m-d');
+    $formatted = $time->getFormattedDate('Y-m-d');
     unlink('/tmp/test.env');
     return preg_match('/^\d{4}-\d{2}-\d{2}$/', $formatted) === 1;
 });
@@ -232,14 +241,16 @@ test("Logger: запись лога", function() {
     $di->singleton(TimeDate::class, fn() => new TimeDate($config));
     
     Logger::resetAll();
+    // Устанавливаем директорию логов в /tmp для тестов
+    Logger::setLogDir('/tmp');
     $logger = Logger::getInstance('test.log');
     $result = $logger->writeLog('INFO', 'Test message');
-    $logger->close();
     
-    $logPath = Route::getPathCoreLog() . 'test.log';
+    $logPath = '/tmp/test.log';
     if (file_exists($logPath)) {
         unlink($logPath);
     }
+    Logger::resetInstance('test.log');
     unlink('/tmp/test.env');
     return $result !== false;
 });
@@ -252,11 +263,11 @@ test("Logger: санитизация переносов строк", function() 
     $di->singleton(TimeDate::class, fn() => new TimeDate($config));
     
     Logger::resetAll();
+    Logger::setLogDir('/tmp');
     $logger = Logger::getInstance('test_sanitize.log');
     $logger->writeLog('INFO', "Test\nmessage\rwith\nbreaks");
-    $logger->close();
     
-    $logPath = Route::getPathCoreLog() . 'test_sanitize.log';
+    $logPath = '/tmp/test_sanitize.log';
     if (!file_exists($logPath)) {
         unlink('/tmp/test.env');
         return false;
@@ -264,6 +275,7 @@ test("Logger: санитизация переносов строк", function() 
     
     $content = file_get_contents($logPath);
     unlink($logPath);
+    Logger::resetInstance('test_sanitize.log');
     unlink('/tmp/test.env');
     
     $lines = explode("\n", trim($content));
@@ -276,40 +288,40 @@ echo "\n--- Тесты Template.php ---\n";
 test("Template: замена переменных {key} через render", function() {
     $template = new Template();
     $template->assign('name', 'World');
-    file_put_contents('/workspace/tests/test.tpl', 'Hello {name}!');
-    $template->addTplFile('/workspace/tests/test.tpl');
+    file_put_contents('/tmp/test.tpl', 'Hello {name}!');
+    $template->addTplFile('/tmp/test.tpl');
     $result = $template->render();
-    unlink('/workspace/tests/test.tpl');
+    unlink('/tmp/test.tpl');
     return $result === 'Hello World!';
 });
 
 test("Template: замена переменных {{key}} через render", function() {
     $template = new Template();
     $template->assign('name', 'World');
-    file_put_contents('/workspace/tests/test.tpl', 'Hello {{name}}!');
-    $template->addTplFile('/workspace/tests/test.tpl');
+    file_put_contents('/tmp/test.tpl', 'Hello {{name}}!');
+    $template->addTplFile('/tmp/test.tpl');
     $result = $template->render();
-    unlink('/workspace/tests/test.tpl');
+    unlink('/tmp/test.tpl');
     return $result === 'Hello World!';
 });
 
 test("Template: экранирование XSS через assignEscaped", function() {
     $template = new Template();
     $template->assignEscaped('script', '<script>alert(1)</script>');
-    file_put_contents('/workspace/tests/test.tpl', '{{script}}');
-    $template->addTplFile('/workspace/tests/test.tpl');
+    file_put_contents('/tmp/test.tpl', '{{script}}');
+    $template->addTplFile('/tmp/test.tpl');
     $result = $template->render();
-    unlink('/workspace/tests/test.tpl');
+    unlink('/tmp/test.tpl');
     return strpos($result, '<script>') === false && strpos($result, '&lt;script&gt;') !== false;
 });
 
 test("Template: assignArray с экранированием", function() {
     $template = new Template();
     $template->assignArray(['safe' => 'OK', 'danger' => '<b>bold</b>'], true);
-    file_put_contents('/workspace/tests/test.tpl', '{{safe}} {{danger}}');
-    $template->addTplFile('/workspace/tests/test.tpl');
+    file_put_contents('/tmp/test.tpl', '{{safe}} {{danger}}');
+    $template->addTplFile('/tmp/test.tpl');
     $result = $template->render();
-    unlink('/workspace/tests/test.tpl');
+    unlink('/tmp/test.tpl');
     return strpos($result, '<b>') === false && strpos($result, '&lt;b&gt;') !== false;
 });
 

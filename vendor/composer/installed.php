@@ -3,7 +3,7 @@
         'name' => 'vampqwe/vampqwe-engine',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '9b742c93709c6819881233609d5597d3474093c5',
+        'reference' => '0ea1a8813b74422310ee363b6195760e70a439ec',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -46,7 +46,7 @@
         'vampqwe/vampqwe-engine' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '9b742c93709c6819881233609d5597d3474093c5',
+            'reference' => '0ea1a8813b74422310ee363b6195760e70a439ec',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
