@@ -1,0 +1,40 @@
+[2026-10-03 13:35:05] [INFO] Админка загружена | {"uri":""}
+[2026-10-03 13:35:05] [ERROR] Необработанное исключение: Template: файл не найден: H:\Server\OSPanel\home\usyplenie.103vet.test/admin/templates/partials/menu.html | {"file":"H:\\Server\\OSPanel\\home\\usyplenie.103vet.test\\core\\classes\\module\\Template\\Template.php","line":71}
+[2026-10-03 13:51:39] [INFO] Админка загружена | {"uri":""}
+[2026-10-03 13:51:39] [ERROR] Необработанное исключение: Template: файл не найден: H:\Server\OSPanel\home\usyplenie.103vet.test/admin/templates/partials/menu.html | {"file":"H:\\Server\\OSPanel\\home\\usyplenie.103vet.test\\core\\classes\\module\\Template\\Template.php","line":71}
+[2026-10-03 13:53:38] [INFO] Админка загружена | {"uri":""}
+[2026-10-03 13:57:07] [INFO] Админка загружена | {"uri":""}
+[2026-10-03 13:57:08] [INFO] Админка загружена | {"uri":""}
+[2026-10-03 13:57:51] [INFO] Админка загружена | {"uri":""}
+[2026-10-03 13:57:57] [INFO] Админка загружена | {"uri":"pages"}
+[2026-10-03 13:57:57] [ERROR] Необработанное исключение: Класс не найден: PageSettingsController | {"file":"H:\\Server\\OSPanel\\home\\usyplenie.103vet.test\\core\\classes\\system\\DI\\Container.php","line":104}
+[2026-10-03 14:00:48] [INFO] Админка загружена | {"uri":"settings"}
+[2026-10-03 14:00:51] [INFO] Админка загружена | {"uri":"redirects"}
+[2026-10-03 14:00:52] [INFO] Админка загружена | {"uri":"users"}
+[2026-10-03 14:00:52] [ERROR] Необработанное исключение: Класс не найден: UserSettingsController | {"file":"H:\\Server\\OSPanel\\home\\usyplenie.103vet.test\\core\\classes\\system\\DI\\Container.php","line":104}
+[2026-10-03 14:06:41] [INFO] Админка загружена | {"uri":"redirects"}
+[2026-10-03 14:06:57] [INFO] Админка загружена | {"uri":"pages"}
+[2026-10-03 14:06:57] [ERROR] Необработанное исключение: Класс не найден: PageSettingsController | {"file":"H:\\Server\\OSPanel\\home\\usyplenie.103vet.test\\core\\classes\\system\\DI\\Container.php","line":104}
+[2026-10-03 14:07:05] [INFO] Админка загружена | {"uri":"users"}
+[2026-10-03 14:07:05] [ERROR] Необработанное исключение: Класс не найден: UserSettingsController | {"file":"H:\\Server\\OSPanel\\home\\usyplenie.103vet.test\\core\\classes\\system\\DI\\Container.php","line":104}
+[2026-10-03 14:22:05] [INFO] Админка загружена | {"uri":"redirects"}
+[2026-10-03 15:21:42] [INFO] Админка загружена | {"uri":"redirects"}
+[2026-10-03 15:21:44] [INFO] Админка загружена | {"uri":"pages"}
+[2026-10-03 15:21:55] [INFO] Админка загружена | {"uri":"schemas"}
+[2026-10-03 15:21:57] [INFO] Админка загружена | {"uri":"authors"}
+[2026-10-03 15:22:00] [INFO] Админка загружена | {"uri":"pages/create"}
+[2026-10-03 15:22:51] [INFO] Админка загружена | {"uri":"pages/edit/8"}
+[2026-10-03 15:26:02] [INFO] Админка загружена | {"uri":"users"}
+[2026-10-03 15:26:02] [ERROR] Необработанное исключение: Класс не найден: UserSettingsController | {"file":"H:\\Server\\OSPanel\\home\\usyplenie.103vet.test\\core\\classes\\system\\DI\\Container.php","line":104}
+[2026-10-03 15:26:08] [INFO] Админка загружена | {"uri":"settings"}
+[2026-10-03 15:31:10] [INFO] Админка загружена | {"uri":"pages/edit/8"}
+[2026-10-03 15:31:50] [INFO] Админка загружена | {"uri":"pages/create"}
+[2026-10-03 15:33:01] [INFO] Админка загружена | {"uri":"pages/create"}
+[2026-10-03 15:35:19] [INFO] Админка загружена | {"uri":"pages/create"}
+[2026-10-03 15:36:28] [INFO] Админка загружена | {"uri":"pages/create"}
+[2026-10-03 15:37:31] [INFO] Админка загружена | {"uri":"pages"}
+[2026-10-03 15:37:34] [INFO] Админка загружена | {"uri":"pages"}
+[2026-10-03 15:40:00] [INFO] Админка загружена | {"uri":"pages/update/8"}
+[2026-10-03 15:40:02] [INFO] Админка загружена | {"uri":"pages"}
+[2026-10-03 15:57:48] [INFO] Админка загружена | {"uri":"pages/edit/8"}
+[2026-10-03 16:22:46] [INFO] Админка загружена | {"uri":"pages"}

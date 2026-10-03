@@ -1,0 +1,60 @@
+<aside class="admin-sidebar">
+    <div class="admin-logo">
+        <span class="admin-logo-icon">🐾</span>
+        <span>VampqweEngine</span>
+    </div>
+
+    <nav class="admin-nav">
+        <div class="admin-nav-section">
+            <div class="admin-nav-title">Основное</div>
+            <a href="/admin/" class="admin-nav-item {active-dashboard}">
+                <span class="admin-nav-icon">📊</span>
+                <span>Панель управления</span>
+            </a>
+        </div>
+
+        <div class="admin-nav-section">
+            <div class="admin-nav-title">Контент</div>
+            <a href="/admin/pages" class="admin-nav-item {active-pages}">
+                <span class="admin-nav-icon">📄</span>
+                <span>Страницы</span>
+                <span class="admin-nav-badge">{pages_count}</span>
+            </a>
+            <a href="/admin/schemas" class="admin-nav-item {active-schemas}">
+                <span class="admin-nav-icon">🏷️</span>
+                <span>Schema.org</span>
+            </a>
+            <a href="/admin/authors" class="admin-nav-item {active-authors}">
+                <span class="admin-nav-icon">✍️</span>
+                <span>Авторы</span>
+            </a>
+        </div>
+
+        <div class="admin-nav-section">
+            <div class="admin-nav-title">Система</div>
+            <a href="/admin/users" class="admin-nav-item {active-users}">
+                <span class="admin-nav-icon">👥</span>
+                <span>Пользователи</span>
+            </a>
+            <a href="/admin/redirects" class="admin-nav-item {active-redirects}">
+                <span class="admin-nav-icon">🔀</span>
+                <span>Редиректы</span>
+            </a>
+            <a href="/admin/settings" class="admin-nav-item {active-settings}">
+                <span class="admin-nav-icon">⚙️</span>
+                <span>Настройки</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="admin-sidebar-footer">
+        <div class="admin-user">
+            <div class="admin-user-avatar">{user_initials}</div>
+            <div class="admin-user-info">
+                <div class="admin-user-name">{user_name}</div>
+                <div class="admin-user-role">{user_role}</div>
+            </div>
+            <a href="/admin/logout" class="btn btn-ghost btn-icon" title="Выйти">🚪</a>
+        </div>
+    </div>
+</aside>

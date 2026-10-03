@@ -1,0 +1,276 @@
+[2026-10-04 01:56:09] [DEBUG] SQL: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1 | Params: ["home","published"]
+[2026-10-04 01:56:09] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ?)
+                ORDER BY `priority` DESC | Params: ["*",1]
+[2026-10-04 01:56:09] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["css\/styles.css","published"]
+[2026-10-04 01:56:09] [DEBUG] Страница не найдена: 'css/styles.css', ищем 404
+[2026-10-04 01:56:09] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 01:56:09] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",2,"404"]
+[2026-10-04 01:56:09] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["assets\/js\/main.js","published"]
+[2026-10-04 01:56:09] [DEBUG] Страница не найдена: 'assets/js/main.js', ищем 404
+[2026-10-04 01:56:09] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 01:56:09] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",2,"404"]
+[2026-10-04 01:56:10] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["favicon.svg","published"]
+[2026-10-04 01:56:10] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["favicon-180.png","published"]
+[2026-10-04 01:56:10] [DEBUG] Страница не найдена: 'favicon.svg', ищем 404
+[2026-10-04 01:56:10] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 01:56:10] [DEBUG] Страница не найдена: 'favicon-180.png', ищем 404
+[2026-10-04 01:56:10] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 01:56:10] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",2,"404"]
+[2026-10-04 01:56:10] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",2,"404"]
+[2026-10-04 01:56:10] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["favicon-64.png","published"]
+[2026-10-04 01:56:10] [DEBUG] Страница не найдена: 'favicon-64.png', ищем 404
+[2026-10-04 01:56:10] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 01:56:10] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",2,"404"]
+[2026-10-04 02:07:48] [DEBUG] SQL: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1 | Params: ["home","published"]
+[2026-10-04 02:07:48] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:48] [ERROR] Ошибка поиска главной страницы: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:48] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:48] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:48] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["css\/styles.css","published"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:49] [ERROR] Ошибка поиска страницы по slug 'css/styles.css': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] Страница не найдена: 'css/styles.css', ищем 404
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:49] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:49] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["favicon.svg","published"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:49] [ERROR] Ошибка поиска страницы по slug 'favicon.svg': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] Страница не найдена: 'favicon.svg', ищем 404
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:49] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:49] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["favicon-180.png","published"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:49] [ERROR] Ошибка поиска страницы по slug 'favicon-180.png': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] Страница не найдена: 'favicon-180.png', ищем 404
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:49] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:49] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["favicon-64.png","published"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:49] [ERROR] Ошибка поиска страницы по slug 'favicon-64.png': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] Страница не найдена: 'favicon-64.png', ищем 404
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:49] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:49] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:49] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:49] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:54] [DEBUG] SQL: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1 | Params: ["home","published"]
+[2026-10-04 02:07:54] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:54] [ERROR] Ошибка поиска главной страницы: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:54] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:54] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:54] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:54] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["css\/styles.css","published"]
+[2026-10-04 02:07:54] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:54] [ERROR] Ошибка поиска страницы по slug 'css/styles.css': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:54] [DEBUG] Страница не найдена: 'css/styles.css', ищем 404
+[2026-10-04 02:07:54] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:07:54] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:54] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:54] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:54] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:54] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1 | Params: ["home","published"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:57] [ERROR] Ошибка поиска главной страницы: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:57] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["css\/styles.css","published"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:57] [ERROR] Ошибка поиска страницы по slug 'css/styles.css': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] Страница не найдена: 'css/styles.css', ищем 404
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:57] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:57] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["favicon-180.png","published"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:57] [ERROR] Ошибка поиска страницы по slug 'favicon-180.png': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] Страница не найдена: 'favicon-180.png', ищем 404
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:57] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:57] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["favicon.svg","published"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:57] [ERROR] Ошибка поиска страницы по slug 'favicon.svg': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] Страница не найдена: 'favicon.svg', ищем 404
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:57] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:57] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["favicon-64.png","published"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:57] [ERROR] Ошибка поиска страницы по slug 'favicon-64.png': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] Страница не найдена: 'favicon-64.png', ищем 404
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:07:57] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:07:57] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:07:57] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:07:57] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:08:07] [DEBUG] SQL: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1 | Params: ["home","published"]
+[2026-10-04 02:08:07] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:08:07] [ERROR] Ошибка поиска главной страницы: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:08:07] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:08:07] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:08:07] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:08:07] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["css\/styles.css","published"]
+[2026-10-04 02:08:07] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:08:07] [ERROR] Ошибка поиска страницы по slug 'css/styles.css': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:08:07] [DEBUG] Страница не найдена: 'css/styles.css', ищем 404
+[2026-10-04 02:08:07] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:08:07] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:08:07] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:08:07] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:08:07] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:08:07] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:09:35] [DEBUG] SQL: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1 | Params: ["home","published"]
+[2026-10-04 02:09:35] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `page_type` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:09:35] [ERROR] Ошибка поиска главной страницы: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:09:35] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:09:35] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:09:35] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist
+[2026-10-04 02:09:35] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["css\/styles.css","published"]
+[2026-10-04 02:09:35] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:09:35] [ERROR] Ошибка поиска страницы по slug 'css/styles.css': SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:09:35] [DEBUG] Страница не найдена: 'css/styles.css', ищем 404
+[2026-10-04 02:09:35] [DEBUG] SQL: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1 | Params: ["404","published"]
+[2026-10-04 02:09:35] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist | Query: SELECT * FROM `pages` WHERE `slug` = ? AND `status` = ? LIMIT 1
+[2026-10-04 02:09:35] [ERROR] Ошибка поиска страницы 404: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.pages' doesn't exist
+[2026-10-04 02:09:35] [DEBUG] SQL: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC | Params: ["*",0,"404"]
+[2026-10-04 02:09:35] [ERROR] Ошибка SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist | Query: SELECT * FROM `schema_org`
+                WHERE `is_active` = 1
+                AND (`route` = ? OR `page_id` = ? OR `route` = ?)
+                ORDER BY `priority` DESC
+[2026-10-04 02:09:35] [ERROR] Ошибка получения схем: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vampqweengine.schema_org' doesn't exist

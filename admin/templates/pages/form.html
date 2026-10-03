@@ -1,0 +1,344 @@
+{error_alert}
+
+<form method="POST" action="{form_action}">
+    <!-- Основная информация -->
+    <div class="card">
+        <div class="card-header">
+            <h3>{form_title}</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="form-label">Заголовок (title) <span class="required">*</span></label>
+                <input type="text" name="title" class="form-control" value="{title}" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">Slug (URL) <span class="required">*</span></label>
+                    <input type="text" name="slug" class="form-control" value="{slug}" required>
+                    <small class="form-hint">Только латинские буквы, цифры, дефис и слэш. Без начального слэша.</small>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Тип страницы</label>
+                    <select name="page_type" class="form-control">
+                        {page_type_options}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Описание (meta description)</label>
+                <textarea name="description" class="form-control" rows="2">{description}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Ключевые слова (meta keywords)</label>
+                <input type="text" name="keywords" class="form-control" value="{keywords}">
+            </div>
+
+			<div class="form-group">
+				<label class="form-label">
+					Контент (HTML) <span class="required">*</span>
+			<span class="form-hint" style="display: inline; margin-left: 12px;">
+				💡 Ссылки <code>&lt;a href&gt;</code> подсвечиваются зелёным
+			</span>
+				</label>
+			<div class="code-editor-wrapper">
+				<div class="code-highlight" id="contentHighlight" aria-hidden="true"></div>
+					<textarea name="content" id="contentTextarea" class="form-control code-textarea" rows="15" required>{content}</textarea>
+				</div>
+			</div>
+
+    <!-- SEO и Open Graph -->
+    <div class="card">
+        <div class="card-header">
+            <h3>SEO и Open Graph</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="form-label">Canonical URL</label>
+                <input type="text" name="canonical" class="form-control" value="{canonical}" placeholder="Авто из slug, если пусто">
+                <small class="form-hint">Оставьте пустым для автогенерации из slug</small>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">OG Title</label>
+                    <input type="text" name="og_title" class="form-control" value="{og_title}">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">OG Image URL</label>
+                    <input type="text" name="og_image" class="form-control" value="{og_image}" placeholder="/assets/images/og-default.jpg">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">OG Description</label>
+                <textarea name="og_description" class="form-control" rows="2">{og_description}</textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">Meta Robots</label>
+                    <select name="meta_robots" class="form-control">
+                        {meta_robots_options}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Автор</label>
+                    <select name="author_id" class="form-control">
+                        {author_options}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ⭐ СХЕМЫ SCHEMA.ORG -->
+    <div class="card">
+        <div class="card-header">
+            <h3>🏷️ Схемы Schema.org</h3>
+            <button type="button" class="btn btn-outline btn-sm" id="addSchemaBtn">+ Добавить схему</button>
+        </div>
+        <div class="card-body">
+            <p class="text-muted mb-2">Схемы привязываются к этой странице. @context и @type добавятся автоматически.</p>
+            <div id="schemasContainer">
+                {schemas_blocks}
+            </div>
+            <button type="button" class="btn btn-outline btn-sm mt-2" id="addSchemaBtnBottom">+ Добавить ещё одну схему</button>
+        </div>
+    </div>
+
+    <!-- Скрипты и параметры -->
+    <div class="card">
+        <div class="card-header">
+            <h3>Скрипты и параметры</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="form-label">JS-скрипты (JSON-массив)</label>
+                <textarea name="scripts" class="form-control" rows="3" placeholder='["/assets/js/faq.js", "/assets/js/calculator.js"]'>{scripts}</textarea>
+                <small class="form-hint">Уникальные скрипты страницы в формате JSON-массива.</small>
+            </div>
+
+            <div class="form-row-3">
+                <div class="form-group">
+                    <label class="form-label">Родительская страница</label>
+                    <select name="parent_id" class="form-control">
+                        {parent_options}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Порядок сортировки</label>
+                    <input type="number" name="sort_order" class="form-control" value="{sort_order}">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Статус</label>
+                    <select name="status" class="form-control">
+                        {status_options}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-check">
+                    <input type="checkbox" name="is_in_menu" {is_in_menu_checked}>
+                    <span>Показывать в меню сайта</span>
+                </label>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="/admin/pages" class="btn btn-secondary">← Отмена</a>
+            <button type="submit" class="btn btn-primary btn-lg">{submit_text}</button>
+        </div>
+    </div>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Находим элементы
+    const container = document.getElementById('schemasContainer');
+    const btnTop = document.getElementById('addSchemaBtn');
+    const btnBottom = document.getElementById('addSchemaBtnBottom');
+
+    // Если контейнера нет на странице, выходим, чтобы не было ошибок
+    if (!container) return;
+
+    // 2. Надёжно считаем количество уже существующих блоков
+    const existingBlocks = container.querySelectorAll('[data-schema-index]');
+    let schemaCounter = existingBlocks.length;
+
+    const schemaTypes = [
+        'Article', 'WebPage', 'MedicalWebPage', 'FAQPage', 
+        'VeterinaryCare', 'Organization', 'Person', 'LocalBusiness', 'BreadcrumbList'
+    ];
+
+    // 3. Функция создания нового блока
+    function createSchemaBlock(e) {
+        if (e) e.preventDefault(); // Предотвращаем случайную отправку формы
+
+        const index = schemaCounter++;
+        let optionsHtml = '';
+        
+        schemaTypes.forEach(t => {
+            optionsHtml += '<option value="' + t + '">' + t + '</option>';
+        });
+
+        const html = `
+            <div class="schema-block" data-schema-index="${index}">
+                <input type="hidden" name="schemas[${index}][id]" value="0">
+                <div class="d-flex justify-between align-center mb-2">
+                    <h6 class="mb-0">Новая схема #${index + 1}</h6>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="this.closest('.schema-block').remove()">✕ Удалить</button>
+                </div>
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label">Тип схемы</label>
+                        <select name="schemas[${index}][schema_type]" class="form-control">${optionsHtml}</select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Приоритет</label>
+                        <input type="number" name="schemas[${index}][priority]" class="form-control" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Активна</label>
+                        <label class="form-check mt-2">
+                            <input type="checkbox" name="schemas[${index}][is_active]" checked>
+                            <span>Да</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">JSON-LD данные</label>
+                    <textarea name="schemas[${index}][data]" class="form-control" rows="5" placeholder='{"headline": "Заголовок", "author": {"@type": "Person", "name": "Иван"}}'></textarea>
+                    <small class="form-hint">Валидный JSON. @context и @type добавятся автоматически.</small>
+                </div>
+            </div>
+        `;
+
+        container.insertAdjacentHTML('beforeend', html);
+    }
+	
+    // 4. Вешаем обработчики событий с проверкой существования кнопок
+    if (btnTop) {
+        btnTop.addEventListener('click', createSchemaBlock);
+    }
+    if (btnBottom) {
+        btnBottom.addEventListener('click', createSchemaBlock);
+    }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.getElementById('contentTextarea');
+    const highlight = document.getElementById('contentHighlight');
+
+    if (!textarea || !highlight) return;
+
+    /**
+     * Экранирует HTML-спецсимволы для безопасного отображения
+     */
+    function escapeHtml(text) {
+        return text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    /**
+     * Подсвечивает HTML-код с акцентом на ссылки
+     *
+     * Логика:
+     *  1. Экранируем весь текст (чтобы теги не рендерились)
+     *  2. Находим все <a>...</a> в экранированном виде
+     *  3. Оборачиваем их в <span class="hl-link">
+     *  4. Остальные теги помечаем как hl-tag для контекста
+     */
+    function highlightCode(text) {
+        let escaped = escapeHtml(text);
+
+        // 1. Подсветка ссылок: <a ...>...</a>
+        //    Ищем в экранированном виде: &lt;a ... &gt; ... &lt;/a&gt;
+        escaped = escaped.replace(
+            /(&lt;a\s+[^&]*?&gt;)(.*?)(&lt;\/a&gt;)/gi,
+            function(match, openTag, content, closeTag) {
+                return '<span class="hl-link">' + openTag + content + closeTag + '</span>';
+            }
+        );
+
+        // 2. Подсветка остальных HTML-тегов (для контекста)
+        //    Но НЕ внутри уже подсвеченных ссылок
+        escaped = escaped.replace(
+            /(&lt;\/?)([a-zA-Z][a-zA-Z0-9]*)([^&]*?)(&gt;)/g,
+            function(match, open, tagName, attrs, close) {
+                // Пропускаем, если уже внутри hl-link (проверяем по контексту)
+                return open + '<span class="hl-tag">' + tagName + '</span>' + attrs + close;
+            }
+        );
+
+        // 3. Подсветка атрибутов внутри тегов
+        escaped = escaped.replace(
+            /(\s)([a-zA-Z\-]+)(=)(&quot;[^&]*?&quot;|&#039;[^&]*?&#039;)/g,
+            function(match, space, attrName, eq, attrValue) {
+                return space + '<span class="hl-attr">' + attrName + '</span>' + eq + attrValue;
+            }
+        );
+
+        return escaped;
+    }
+
+    /**
+     * Обновляет подсветку и синхронизирует скролл
+     */
+    function updateHighlight() {
+        const text = textarea.value;
+        highlight.innerHTML = highlightCode(text) + '\n'; // +\n чтобы высота совпадала
+    }
+
+    /**
+     * Синхронизация скролла между textarea и highlight
+     */
+    function syncScroll() {
+        highlight.scrollTop = textarea.scrollTop;
+        highlight.scrollLeft = textarea.scrollLeft;
+    }
+
+    // Первичная отрисовка
+    updateHighlight();
+
+    // Обновление при вводе (с дебаунсом для производительности)
+    let debounceTimer;
+    textarea.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(updateHighlight, 50);
+    });
+
+    // Синхронизация скролла
+    textarea.addEventListener('scroll', syncScroll);
+    textarea.addEventListener('keyup', syncScroll);
+
+    // Обработка Tab (вставка 4 пробелов вместо перехода фокуса)
+    textarea.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+            e.preventDefault();
+            const start = this.selectionStart;
+            const end = this.selectionEnd;
+            this.value = this.value.substring(0, start) + '    ' + this.value.substring(end);
+            this.selectionStart = this.selectionEnd = start + 4;
+            updateHighlight();
+        }
+    });
+});
+</script>
+<style>
+/* Убедимся, что стили для блоков схем применены */
+.schema-block {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 3px solid var(--color-accent); /* #010463 из твоей палитры */
+}
+</style>

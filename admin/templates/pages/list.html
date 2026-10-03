@@ -1,0 +1,55 @@
+<div class="toolbar">
+    <form method="GET" action="/admin/pages" class="d-flex gap-2" style="flex: 1; max-width: 600px;">
+        <div class="toolbar-search" style="flex: 1;">
+            <span class="toolbar-search-icon">🔍</span>
+            <input type="text" name="search" class="form-control" placeholder="Поиск по заголовку или slug..." value="{search_query}">
+        </div>
+        <select name="status" class="form-control" style="width: auto;">
+            <option value="">Все статусы</option>
+            <option value="published">Опубликовано</option>
+            <option value="draft">Черновики</option>
+            <option value="archived">В архиве</option>
+        </select>
+        <select name="type" class="form-control" style="width: auto;">
+            <option value="">Все типы</option>
+            <option value="article">Article</option>
+            <option value="home">Home</option>
+            <option value="hub">Hub</option>
+            <option value="page">Page</option>
+            <option value="404">404</option>
+            <option value="500">500</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Применить</button>
+    </form>
+    <a href="/admin/pages/create" class="btn btn-success">+ Новая страница</a>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3>Все страницы</h3>
+        <span class="text-muted">Найдено: {total}</span>
+    </div>
+    <div class="card-body" style="padding: 0;">
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">ID</th>
+                        <th>Заголовок</th>
+                        <th>Slug</th>
+                        <th>Тип</th>
+                        <th>Статус</th>
+                        <th>Обновлено</th>
+                        <th style="width: 160px; text-align: right;">Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {pages}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer">
+        {pagination}
+    </div>
+</div>

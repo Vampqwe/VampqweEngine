@@ -1,0 +1,8 @@
+# Запрет прямого доступа к лог-файлам
+<FilesMatch "\.log$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Запрет листинга директории
+Options -Indexes

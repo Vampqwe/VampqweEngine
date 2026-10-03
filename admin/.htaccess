@@ -1,0 +1,22 @@
+# Защита системных файлов
+<FilesMatch "\.(env|md|sql|log)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Запрет прямого доступа к папкам
+<FilesMatch "^(bootstrap|admin)\.php$">
+    # Эти файлы доступны напрямую
+</FilesMatch>
+
+# Rewrite: всё → admin.php
+RewriteEngine On
+RewriteBase /admin/
+
+# Если файл/папка существуют — отдаём напрямую (css, js, img)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Всё остальное → admin.php
+RewriteRule ^(.*)$ admin.php [QSA,L]

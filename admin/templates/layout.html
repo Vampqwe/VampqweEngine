@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} — Админ-панель</title>
+    <link rel="stylesheet" href="/admin/assets/css/admin.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <span class="admin-logo-icon">🐾</span>
+                <span>VampqweEngine</span>
+            </div>
+            {menu}
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1 class="admin-header-title">{{title}}</h1>
+                <div class="admin-header-actions">
+                    <a href="/" target="_blank" class="btn btn-outline btn-sm">🌐 На сайт</a>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                {content}
+            </div>
+        </main>
+    </div>
+
+    <script src="/admin/assets/js/admin.js" defer></script>
+</body>
+</html>
