@@ -14,7 +14,12 @@ class SessionService
             $this->redis = new Redis();
             $host = (string)$config->getEnv('SAVE_SESSION_PATH_HOST', '127.0.0.1');
             $port = (int)$config->getEnv('SAVE_SESSION_PATH_PORT', 6379);
+            $auth = (string)$config->getEnv('SAVE_SESSION_PATH_AUTH', '');
+
             $this->redis->connect($host, $port, 2.0);
+            if ($auth !== '') {
+                $this->redis->auth($auth);
+            }
         }
     }
 

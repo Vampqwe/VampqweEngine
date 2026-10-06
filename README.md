@@ -72,16 +72,29 @@ composer install
 cp core/config.env.example core/config.env
 ```
 
+### Запуск с MySQL + Redis через Docker
+
+```bash
+docker compose up -d mysql redis
+```
+
+Стек запускается на:
+- MySQL: `127.0.0.1:3307`
+- Redis: `127.0.0.1:6379`
+
 ### Конфигурация (`core/config.env`)
 
 Основные переменные:
 
 ```ini
 # База данных
-DB_LOGIN="your_db_user"
-DB_PASSWORD="your_db_password"
+DB_LOGIN="vampqwe"
+DB_PASSWORD="secret"
 DB_HOST="127.0.0.1"
-DB_NAME="vetMinsk_usyplenie"
+DB_PORT="3307"
+DB_NAME="vampqwe"
+DB_CHARSET="utf8mb4"
+DB_DRIVER="mysql"
 
 # Режим работы
 ACTIVE_MODE=MODE_DB
@@ -90,6 +103,7 @@ ACTIVE_MODE=MODE_DB
 SAVE_SESSION_HANDLER=redis
 SAVE_SESSION_PATH_HOST=127.0.0.1
 SAVE_SESSION_PATH_PORT=6379
+SAVE_SESSION_PATH_AUTH=
 
 # Сайт
 SITE_URL="https://usyplenie.103vet.by/"

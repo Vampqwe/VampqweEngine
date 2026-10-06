@@ -52,6 +52,11 @@ class DataBase
                 $config->getEnv('DB_CHARSET')
             );
 
+            $port = $config->getEnv('DB_PORT');
+            if ($port !== null && $port !== '' && (string)$port !== '0') {
+                $dsn .= ';port=' . (string)$port;
+            }
+
             $user     = $config->getEnv('DB_LOGIN');
             $password = $config->getEnv('DB_PASSWORD');
 
