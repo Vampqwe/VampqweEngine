@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+</head>
+<body>
+    <main style="max-width:480px; margin:60px auto; font-family: Arial, sans-serif;">
+        <h1>{{pageTitle}}</h1>
+
+        <form method="post" action="/profile/upload" enctype="multipart/form-data">
+            <p>
+                <input type="file" name="file" required style="width:100%;">
+            </p>
+            <p>
+                <button type="submit">Загрузить</button>
+            </p>
+        </form>
+
+        <p><a href="/profile">Назад в профиль</a></p>
+    </main>
+</body>
+</html>

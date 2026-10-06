@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3cb12f66c87cea490856992f9597f7ac
+class ComposerStaticInit562cacac995452b7116dcbf663758806
 {
     public static $files = array (
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
@@ -48,6 +48,8 @@ class ComposerStaticInit3cb12f66c87cea490856992f9597f7ac
     public static $classMap = array (
         'Account' => __DIR__ . '/../..' . '/core/classes/module/AccountManagementSystem/Account.php',
         'AccountManagementSystem' => __DIR__ . '/../..' . '/core/classes/module/AccountManagementSystem/AccountManagementSystem.php',
+        'AuthController' => __DIR__ . '/../..' . '/core/classes/module/AccountManagementSystem/AuthController.php',
+        'AuthService' => __DIR__ . '/../..' . '/core/classes/module/AccountManagementSystem/AuthService.php',
         'BasePageController' => __DIR__ . '/../..' . '/core/classes/system/BasePageController/BasePageController.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
@@ -83,11 +85,13 @@ class ComposerStaticInit3cb12f66c87cea490856992f9597f7ac
         'DbQuery' => __DIR__ . '/../..' . '/core/classes/system/Database/DbQuery.php',
         'File' => __DIR__ . '/../..' . '/core/classes/system/File/File.php',
         'FileException' => __DIR__ . '/../..' . '/core/classes/system/File/FileException.php',
+        'FileService' => __DIR__ . '/../..' . '/core/classes/module/AccountManagementSystem/FileService.php',
         'Helper' => __DIR__ . '/../..' . '/core/classes/module/Helper/Helper.php',
         'Logger' => __DIR__ . '/../..' . '/core/classes/system/Logger/Logger.php',
         'Map' => __DIR__ . '/../..' . '/core/classes/system/Map/Map.php',
         'PageController' => __DIR__ . '/../..' . '/core/classes/module/PageController/PageController.php',
         'PageService' => __DIR__ . '/../..' . '/core/classes/module/PageController/PageService.php',
+        'PageSettingsController' => __DIR__ . '/../..' . '/admin/admCore/controllers/PageSettingsController.php',
         'Ramsey\\Collection\\AbstractArray' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractArray.php',
         'Ramsey\\Collection\\AbstractCollection' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractCollection.php',
         'Ramsey\\Collection\\AbstractSet' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractSet.php',
@@ -236,19 +240,21 @@ class ComposerStaticInit3cb12f66c87cea490856992f9597f7ac
         'SchemaService' => __DIR__ . '/../..' . '/core/classes/module/Schema/SchemaService.php',
         'Service' => __DIR__ . '/../..' . '/core/classes/system/Service/Service.php',
         'Session' => __DIR__ . '/../..' . '/core/classes/module/AccountManagementSystem/Session.php',
+        'SessionService' => __DIR__ . '/../..' . '/core/classes/module/AccountManagementSystem/SessionService.php',
         'Template' => __DIR__ . '/../..' . '/core/classes/module/Template/Template.php',
         'TimeDate' => __DIR__ . '/../..' . '/core/classes/system/TimeDate/TimeDate.php',
         'Url' => __DIR__ . '/../..' . '/core/classes/module/Url/Url.php',
         'User' => __DIR__ . '/../..' . '/core/classes/module/AccountManagementSystem/User.php',
+        'UserProfileController' => __DIR__ . '/../..' . '/core/classes/module/AccountManagementSystem/UserProfileController.php',
         'Validator' => __DIR__ . '/../..' . '/core/classes/module/Helper/Validator.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3cb12f66c87cea490856992f9597f7ac::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3cb12f66c87cea490856992f9597f7ac::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3cb12f66c87cea490856992f9597f7ac::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit562cacac995452b7116dcbf663758806::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit562cacac995452b7116dcbf663758806::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit562cacac995452b7116dcbf663758806::$classMap;
 
         }, null, ClassLoader::class);
     }

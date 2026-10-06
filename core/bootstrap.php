@@ -78,6 +78,22 @@ $di->factory(DbQuery::class, fn(Container $c) => new DbQuery(
     $c->get(Logger::class)
 ));
 
+// 4.6. Auth/session modules — Redis-backed sessions + account service layer
+$di->factory(SessionService::class, fn(Container $c) => new SessionService(
+    $c->get(Config::class)
+));
+$di->factory(AuthService::class, fn(Container $c) => new AuthService(
+    $c->get(Config::class),
+    $c->get(DbQuery::class),
+    $c->get(Logger::class),
+    $c->get(SessionService::class)
+));
+$di->factory(FileService::class, fn(Container $c) => new FileService(
+    $c->get(DbQuery::class),
+    $c->get(Config::class),
+    $c->get(Logger::class)
+));
+
 // =========================================================================
 // 5. Регистрация сервисов приложения (factory — новые экземпляры)
 //

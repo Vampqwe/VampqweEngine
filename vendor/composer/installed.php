@@ -3,7 +3,7 @@
         'name' => 'vampqwe/vetminsk',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '6a6dbf96f6ce2a9d8709427739c98b76eebe5393',
+        'reference' => 'b618017957103ccb569ba966e3c813b879918fb0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -46,7 +46,7 @@
         'vampqwe/vetminsk' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '6a6dbf96f6ce2a9d8709427739c98b76eebe5393',
+            'reference' => 'b618017957103ccb569ba966e3c813b879918fb0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -35,7 +35,37 @@ if ($serviceHandler !== null) {
 }
 
 // =========================================================================
-// 4. Глобальный обработчик исключений (только для реальных сбоев)
+// 4. Маршруты аккаунтов /auth
+// =========================================================================
+$routePath = trim($normalizedPath, '/');
+if (in_array($routePath, ['register', 'login', 'logout', 'profile', 'profile/upload'], true)) {
+    $sessionService = $di->get(SessionService::class);
+    $sessionService->start();
+
+    $authController = $di->get(AuthController::class);
+    $profileController = $di->get(UserProfileController::class);
+
+    switch ($routePath) {
+        case 'register':
+            $authController->register();
+            exit;
+        case 'login':
+            $authController->login();
+            exit;
+        case 'logout':
+            $authController->logout();
+            exit;
+        case 'profile':
+            $profileController->index();
+            exit;
+        case 'profile/upload':
+            $profileController->upload();
+            exit;
+    }
+}
+
+// =========================================================================
+// 5. Глобальный обработчик исключений (только для реальных сбоев)
 // =========================================================================
 set_exception_handler(function (Throwable $e) use ($di, $logger): void {
     // 1. Логируем сбой
